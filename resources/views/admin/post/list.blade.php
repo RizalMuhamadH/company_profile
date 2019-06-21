@@ -39,7 +39,7 @@
                 </div>
                 @endif
 
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped" id="mytable">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -49,9 +49,6 @@
                             <th width="280px">Action</th>
                         </tr>
                     </thead>
-                    <tbody id="bodyData">
-
-                    </tbody>
                 </table>
 
             </div>
@@ -91,48 +88,52 @@
 
 <!-- page script -->
 <script>
-    $(function () {
-          $("#example1").DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": true
-    });
+    $(document).ready(function(){
+        $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings){
+            return {
+                "iStart": oSettings._iDisplayStart,
+                "iEnd": oSettings.fnDisplayEnd(),
+                "iLength": oSettings._iDisplayLength,
+                "iTotal": oSettings.fnRecordsTotal(),
+                "iFilteredTotal": oSettings.fnRecordsDisplay(),
+                "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
+                "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
+                };
+        };
+
+        $('#mytable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: 'p/read-all',
+            columns: [
+                { data: 'id', name: 'id' },
+                { data: 'post_title', name: 'title' },
+                { data: 'post_summary', name: 'summary' },
+                { data: 'post_image_thumb', name: 'image', "render": function ( url, type, full) {
+                    return '<div class="text-center"><img src="storage/'+url+'"/></div>';
+                    }
+                },
+                { data: 'id', name: 'action', "render": function ( url, type, full) {
+                    return "<center><a class='btn btn-primary' href='"+url+"'>Edit</a><button class='btn btn-danger delete' value='"+url+"' style='margin-left:20px;'>Delete</button></center>";
+                    }
+                }
+            ],
+
+            order: [[0, 'desc']],
+            rowCallback: function(row, data, iDisplayIndex) {
+                var info = this.fnPagingInfo();
+                var page = info.iPage;
+                var length = info.iLength;
+                var index = page * length + (iDisplayIndex + 1);
+                $('td:eq(0)', row).html(index);
+            }
         });
+
+
+});
 </script>
 
 <script>
-    $(document).ready(function() {
-            var url = "/p";
-            $.ajax({
-                url: "{{ URL::to('p/read-all') }}",
-                type: "GET",
-                data:{
-                    _token:'{{ csrf_token() }}'
-                },
-                cache: false,
-                dataType: 'json',
-                success: function(dataResult){
-                    console.log(dataResult);
-                    var resultData = dataResult;
-                    var bodyData = '';
-                    var i=1;
-                    $.each(resultData,function(index,row){
-                        var editUrl = url+'/'+row.id+"/edit";
-                        bodyData+="<tr>"
-                        bodyData+="<td>"+ i++ +"</td><td>"+row.post_title+"</td><td>"+row.post_summary+"</td><td><center><img src='/storage/"+row.post_image_thumb+"' ></center></td><td><center><a class='btn btn-primary' href='"+editUrl+"'>Edit</a>"
-                        +"<button class='btn btn-danger delete' value='"+row.id+"' style='margin-left:20px;'>Delete</button></center></td>";
-                        bodyData+="</tr>";
-
-                    })
-                    $("#bodyData").append(bodyData);
-                }
-            });
-
-    });
-
     var id;
     var $ele;
 
