@@ -26,7 +26,7 @@ class PostController extends Controller
         // dd(post::all()->toArray());
         // return Post::all()->toArray();
 
-        return view('admin.post.add');
+        return view('admin.post.list');
     }
     public function getPosts()
     {
