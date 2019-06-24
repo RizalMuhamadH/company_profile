@@ -80,6 +80,7 @@
 
                         <div>
                             <textarea id="post_content" class="form-control @error('post_content') is-invalid @enderror"
+                                name="post_content" value="{{ old('post_content') }}"
                                 style="width: 100%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('post_content') }}</textarea>
 
                             @error('post_content')

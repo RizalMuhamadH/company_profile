@@ -5,7 +5,7 @@
         Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2018 <a href="http://ayomedianetwork.com/">AyoMediaNetwork</a>.</strong> All rights
     reserved.
 </footer>
 
