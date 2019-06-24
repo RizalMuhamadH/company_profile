@@ -55,11 +55,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = request()->validate([
             'post_title' => 'required',
             'post_summary' => 'required',
             'post_content' => 'required',
-            'post_image' => ['required', 'image'],
+            'post_image' => 'required|image'
         ]);
 
         $imagePath = request('post_image')->store('upload', 'public');
@@ -124,7 +125,13 @@ class PostController extends Controller
             Image::make(request()->file('post_image')->getRealPath())->resize(320, 240)->save(public_path('storage/thumb/' . date('YmdHis') . "." . request('post_image')->getClientOriginalExtension()));
             $imageThumbPath = 'thumb/' . date('YmdHis') . "." . request('post_image')->getClientOriginalExtension();
         }
-        auth()->user()->post()->update(array_merge(
+
+        // auth()->user()->post()->update(array_merge(
+        //     $data,
+        //     ['post_image' => $imagePath, 'post_image_thumb' => $imageThumbPath]
+        // ));
+
+        auth()->user()->post()->where('id', $id)->update(array_merge(
             $data,
             ['post_image' => $imagePath, 'post_image_thumb' => $imageThumbPath]
         ));
