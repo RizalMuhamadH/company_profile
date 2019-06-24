@@ -60,7 +60,6 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h2 class="modal-title">Confirmation</h2>
             </div>
             <div class="modal-body">
@@ -110,11 +109,11 @@
                 { data: 'post_title', name: 'title' },
                 { data: 'post_summary', name: 'summary' },
                 { data: 'post_image_thumb', name: 'image', "render": function ( url, type, full) {
-                    return '<div class="text-center"><img src="storage/'+url+'"/></div>';
+                    return '<div class="text-center"><img src="storage/'+url+'" style="width:100px;height:100px;"/></div>';
                     }
                 },
                 { data: 'id', name: 'action', "render": function ( url, type, full) {
-                    return "<center><a class='btn btn-primary' href='"+url+"'>Edit</a><button class='btn btn-danger delete' value='"+url+"' style='margin-left:20px;'>Delete</button></center>";
+                    return "<center><a class='btn btn-primary' href='/p/"+url+"/edit'>Edit</a><button class='btn btn-danger delete' value='"+url+"' style='margin-left:20px;'>Delete</button></center>";
                     }
                 }
             ],
