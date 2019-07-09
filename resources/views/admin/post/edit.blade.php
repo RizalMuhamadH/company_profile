@@ -1,5 +1,9 @@
 @extends('admin.home')
 
+@section('title')
+    <title>Articles</title>
+@endsection
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
-use App\post;
+use App\Post;
 use DataTables;
 
 class PostController extends Controller
@@ -35,6 +35,12 @@ class PostController extends Controller
         // return Response(array('draw' => 0,'recordsTotal' => 5,'recordsFiltered' => 5,'data'=>Post::get()));
         // return post::get();
         return Datatables::of(Post::get())->make(true);
+    }
+
+    public function allPost()
+    {
+        // return Response(Post::join('users', 'posts.user_id', '=', 'users.id')->get());
+        return Response(Post::get());
     }
 
     /**
@@ -95,7 +101,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = post::findOrFail($id);
+        $post = Post::findOrFail($id);
         return view('admin.post.edit', compact('post'));
     }
 
@@ -116,7 +122,7 @@ class PostController extends Controller
         ]);
 
 
-        $post = post::findOrFail($id);
+        $post = Post::findOrFail($id);
 
         $imagePath = $post->post_image;
         $imageThumbPath = $post->post_image_thumb;
@@ -148,7 +154,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         // dd($id);
-        post::findOrFail($id)->delete();
+        Post::findOrFail($id)->delete();
         return json_encode(array('status' => 200));
     }
 }
