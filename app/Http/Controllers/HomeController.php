@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $role = Role::findById(1);
+        // $permission = Permission::findById(1);
+        // $role->givePermission($permission);
         return view('admin.post.list');
     }
 }

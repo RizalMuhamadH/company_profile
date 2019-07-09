@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class post extends Model
+class Post extends Model
 {
     // protected $table = 'post';
     protected $fillable = [
@@ -15,4 +15,9 @@ class post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // public function category()
+    // {
+    //     return $this->hasMany(Category::class);
+    // }
 }
