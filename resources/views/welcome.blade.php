@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
     <title>Laravel</title>
 
@@ -110,7 +111,7 @@
     <section class="engine">
         <!-- <a href="https://mobirise.info/w">html5 templates</a> -->
     </section>
-    <section class="cid-qTkA127IK8 mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=G8ch2zXEHTY"
+    {{-- <section class="cid-qTkA127IK8 mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=G8ch2zXEHTY"
         id="header2-1">
 
 
@@ -135,6 +136,83 @@
                 <i class="mbri-down mbr-iconfont"></i>
             </a>
         </div>
+    </section> --}}
+
+    <section class="carousel slide cid-ruiGxnPToe" data-interval="false" id="slider1-u">
+        <div class="full-screen">
+            <div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="4000">
+                <ol class="carousel-indicators">
+                    <li data-app-prevent-settings="" data-target="#slider1-u" data-slide-to="0">
+
+                    </li>
+                    <li data-app-prevent-settings="" data-target="#slider1-u" class=" active" data-slide-to="1">
+
+                    </li>
+                    <li data-app-prevent-settings="" data-target="#slider1-u" data-slide-to="2">
+
+                    </li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/background1.jpg);">
+                        <div class="container-slide">
+                            <div class="image_wrapper">
+                                <div class="mbr-overlay">
+
+                                </div>
+                                <img src="{{ asset('assets/images/background1.jpg') }}">
+                                <div class="carousel-caption justify-content-center">
+                                    <div class="col-10 align-left">
+                                        <h2 class="mbr-fonts-style display-1">FULL SCREEN SLIDER</h2>
+                                        <p class="lead mbr-text mbr-fonts-style display-5">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(assets/images/background2.jpg);">
+                        <div class="container-slide">
+                            <div class="image_wrapper">
+                                <div class="mbr-overlay">
+
+                                </div>
+                                <img src="{{ asset('assets/images/background2.jpg') }}">
+                                <div class="carousel-caption justify-content-center">
+                                    <div class="col-10 align-left">
+                                        <h2 class="mbr-fonts-style display-1">VIDEO SLIDE</h2>
+                                        <p class="lead mbr-text mbr-fonts-style display-5">Slide with youtube video background and color overlay. Title and text are aligned to the left.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/background3.jpg);">
+                        <div class="container-slide">
+                            <div class="image_wrapper">
+                                <div class="mbr-overlay">
+
+                                </div>
+                                <img src="{{ asset('assets/images/background3.jpg') }}">
+                                <div class="carousel-caption justify-content-center">
+                                    <div class="col-10 align-left">
+                                        <h2 class="mbr-fonts-style display-1">IMAGE SLIDE</h2>
+                                        <p class="lead mbr-text mbr-fonts-style display-5">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#slider1-u">
+                    <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next" href="#slider1-u">
+                    <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
     </section>
 
     <section class="mbr-section content5 cid-r9JsGY2Rmv mbr-parallax-background" id="content5-e">
@@ -483,90 +561,6 @@
 
     </section>
 
-    <section class="testimonials-slider cid-rtIzSofAtZ" data-interval="false"
-        id="testimonials-slider1-q">
-
-        <div class="container text-center">
-            <h2 class="pb-5 mbr-fonts-style display-2">
-                {{ __('messages.founder') }}
-            </h2>
-
-            <div class="carousel slide" role="listbox" data-pause="false" data-keyboard="false" data-ride="carousel"
-                data-interval="5000">
-                <div class="carousel-inner">
-
-
-                    <div class="carousel-item">
-                        <div class="user col-md-8">
-                            <div class="user_image">
-                                <img src="{{ asset('assets/images/face1.jpg') }}">
-                            </div>
-                            <div class="user_text pb-3">
-                                <p class="mbr-fonts-style display-7">
-                                    {{ __('messages.founder_sum_1') }}
-                                </p>
-                            </div>
-                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
-                                {{ __('messages.founder_name_1') }}
-                            </div>
-                            {{-- <div class="user_desk mbr-light mbr-fonts-style display-7">
-                                    DESIGNER
-                                </div> --}}
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="user col-md-8">
-                            <div class="user_image">
-                                <img src="{{ asset('assets/images/face2.jpg') }}">
-                            </div>
-                            <div class="user_text pb-3">
-                                <p class="mbr-fonts-style display-7">
-                                    {{ __('messages.founder_sum_2') }}
-                                </p>
-                            </div>
-                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
-                                {{ __('messages.founder_name_2') }}
-                            </div>
-                            {{-- <div class="user_desk mbr-light mbr-fonts-style display-7">
-                                    DEVELOPER
-                                </div> --}}
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="user col-md-8">
-                            <div class="user_image">
-                                <img src="{{ asset('assets/images/face3.jpg') }}">
-                            </div>
-                            <div class="user_text pb-3">
-                                <p class="mbr-fonts-style display-7">
-                                    {{ __('messages.founder_sum_3') }}
-                                </p>
-                            </div>
-                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
-                                {{ __('messages.founder_name_3') }}
-                            </div>
-                            {{-- <div class="user_desk mbr-light mbr-fonts-style display-7">
-                                        DEVELOPER
-                                    </div> --}}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-controls">
-                    <a class="carousel-control-prev" role="button" data-slide="prev">
-                        <span aria-hidden="true" class="mbri-arrow-prev mbr-iconfont"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-
-                    <a class="carousel-control-next" role="button" data-slide="next">
-                        <span aria-hidden="true" class="mbri-arrow-next mbr-iconfont"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="features1 cid-r7nHYnjukR" id="features1-h">
 
 
@@ -658,6 +652,90 @@
 
         </div>
 
+    </section>
+
+    <section class="testimonials-slider cid-rtIzSofAtZ" data-interval="false"
+        id="testimonials-slider1-q">
+
+        <div class="container text-center">
+            <h2 class="pb-5 mbr-fonts-style display-2">
+                {{ __('messages.founder') }}
+            </h2>
+
+            <div class="carousel slide" role="listbox" data-pause="false" data-keyboard="false" data-ride="carousel"
+                data-interval="5000">
+                <div class="carousel-inner">
+
+
+                    <div class="carousel-item">
+                        <div class="user col-md-8">
+                            <div class="user_image">
+                                <img src="{{ asset('assets/images/face1.jpg') }}">
+                            </div>
+                            <div class="user_text pb-3">
+                                <p class="mbr-fonts-style display-7">
+                                    {{ __('messages.founder_sum_1') }}
+                                </p>
+                            </div>
+                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                                {{ __('messages.founder_name_1') }}
+                            </div>
+                            {{-- <div class="user_desk mbr-light mbr-fonts-style display-7">
+                                    DESIGNER
+                                </div> --}}
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="user col-md-8">
+                            <div class="user_image">
+                                <img src="{{ asset('assets/images/face2.jpg') }}">
+                            </div>
+                            <div class="user_text pb-3">
+                                <p class="mbr-fonts-style display-7">
+                                    {{ __('messages.founder_sum_2') }}
+                                </p>
+                            </div>
+                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                                {{ __('messages.founder_name_2') }}
+                            </div>
+                            {{-- <div class="user_desk mbr-light mbr-fonts-style display-7">
+                                    DEVELOPER
+                                </div> --}}
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="user col-md-8">
+                            <div class="user_image">
+                                <img src="{{ asset('assets/images/face3.jpg') }}">
+                            </div>
+                            <div class="user_text pb-3">
+                                <p class="mbr-fonts-style display-7">
+                                    {{ __('messages.founder_sum_3') }}
+                                </p>
+                            </div>
+                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                                {{ __('messages.founder_name_3') }}
+                            </div>
+                            {{-- <div class="user_desk mbr-light mbr-fonts-style display-7">
+                                        DEVELOPER
+                                    </div> --}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <a class="carousel-control-prev" role="button" data-slide="prev">
+                        <span aria-hidden="true" class="mbri-arrow-prev mbr-iconfont"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="carousel-control-next" role="button" data-slide="next">
+                        <span aria-hidden="true" class="mbri-arrow-next mbr-iconfont"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="clients cid-r7nzObqjBz mbr-parallax-background" id="clients-b">

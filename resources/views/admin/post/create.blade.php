@@ -1,5 +1,9 @@
 @extends('admin.home')
 
+@section('title')
+    <title>Articles</title>
+@endsection
+
 @section('content')
 
 <!-- Content Header (Page header) -->
@@ -25,7 +29,7 @@
     <div class="box box-info">
         <div class="card card-primary card-outline">
             <div class="card-body">
-                <form method="POST" action="{{ route('post.store') }}" enctype="multipart/form-data">
+                <form method="POST" action="/p" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="post_title" class="col-md-4 col-form-label">Title</label>
